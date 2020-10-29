@@ -11,6 +11,8 @@ public class Usuario {
 	private String apellido;
 	private Date fechaNacimiento;
 	private List<Video> VideosDeUsuario = new ArrayList();
+
+	
 	
 	Usuario(String usuario, String contrasena) {
 		this.usuario = usuario;
@@ -60,9 +62,18 @@ public class Usuario {
 		System.out.println("El video esta compartido en red social") ;
 	}
 	
-	public void agregarAListaDeReproduccion(ListaDeReproduccion listaDeReproduccion) {
-		System.out.println("Se ha agregado el video a: " + listaDeReproduccion.getListaDeReproduccion()) ;
+	public void agregarAListaDeReproduccion(List<Video> listaDeReproduccion, Video video) {;
+		listaDeReproduccion.add(video);
+		System.out.println("Se ha agregado el video " + video.getTitulo() + " a la lista de reproduccion" + listaDeReproduccion);
 	}
+	
+	public void reproducirLista(List<Video> listaDeReproduccion) {
+		for (int i = 0 ; i < 2; i++) {
+			System.out.println(listaDeReproduccion.get(i));
+			}
+		}
+
+	
 	
 	public void subscribirseAlCanal(Usuario usuario) {
 		System.out.println("Se ha suscripto a " + usuario) ;
@@ -80,9 +91,6 @@ public class Usuario {
 		ArrayList<Video> videos = new ArrayList<Video>();
 	}
 	
-	public void listaDeReproduccion(ListaDeReproduccion[]args) {
-		ArrayList<ListaDeReproduccion> listaDeReproduccion = new ArrayList<ListaDeReproduccion>();
-	}
 	
 	public void suscripciones(Usuario[]args) {
 		ArrayList<Usuario> suscripciones = new ArrayList<Usuario>();

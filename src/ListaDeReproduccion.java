@@ -1,11 +1,13 @@
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListaDeReproduccion {
 	
-	String nombre;
-	Usuario usuario;
-	Date fecha;
+	private String nombre;
+	private Usuario usuario;
+	private Date fecha;
+	private ArrayList<Video> videos = new ArrayList<Video>();
 	
 	ListaDeReproduccion(String nombre) {
 		this.nombre = nombre;
@@ -15,9 +17,6 @@ public class ListaDeReproduccion {
 		return this.nombre;
 	}
 	
-	public void videos(Video[]args) {
-		ArrayList<Video> videos = new ArrayList<Video>();
-	}
 	
 	public void agregarVideo(Video video) {
 		System.out.println("Se ha agregado " + video + "a la lista");

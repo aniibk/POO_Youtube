@@ -11,20 +11,29 @@ public class Main {
 		
 		Video pipipi = new Video("Pipipi","bailando");
 		
-		// List<Video> VideosDeUsuario = new ArrayList<>();	
-		
 		marlene.subirVideo(pipipi);	
 		
 		marlene.agregarVideoACuenta(pipipi);
 		
-		
 		Usuario ana = new Usuario ("AnaKim", "9999");
-		
-		ana.reproducirVideo(pipipi);		
 		
 		Usuario ramiro = new Usuario("RamiroSanguineti", "4321");
 		
 		ramiro.reproducirVideo(pipipi);
+		
+		ListaDeReproduccion videosGraciosos = new ListaDeReproduccion("videosGraciosos");
+		
+		List<Video> listaDeReproduccion = new ArrayList();
+		
+		ana.agregarAListaDeReproduccion(listaDeReproduccion, pipipi);
+		
+		Video lalala = new Video("Lalala","Canto yo");
+		
+		ana.agregarAListaDeReproduccion(listaDeReproduccion, lalala);
+		
+		ana.reproducirLista(listaDeReproduccion);	
+		
+		
 		
 		// String comentario = JOptionPane.showInputDialog("Ingrese comentario");
 		

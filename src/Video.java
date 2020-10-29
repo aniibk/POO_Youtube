@@ -19,6 +19,7 @@ public class Video {
 	Video(String titulo, String descripcion) {
 		this.titulo = titulo;
 		this.descripcion = descripcion;	
+		System.out.println("Se ha creado el video " + this.titulo);	
 	}
 
 	public String getTitulo() {
