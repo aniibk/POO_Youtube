@@ -1,26 +1,35 @@
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.*;
 public class Main {
 	
 	public static void main(String[] args) {
 		
-		Usuario Marlene = new Usuario("MarleneCeballo", "1234");
+		Usuario marlene = new Usuario("MarleneCeballo", "1234");
 		
-		Video Pipipi = new Video("Pipipi","bailando");
+		Video pipipi = new Video("Pipipi","bailando");
 		
-		ListaDeReproduccion videosDeMar = new ListaDeReproduccion("Videos de Mar");
+		// List<Video> VideosDeUsuario = new ArrayList<>();	
 		
-		Marlene.subirVideo(Pipipi);	
+		marlene.subirVideo(pipipi);	
 		
-		Pipipi.reproducir();
+		marlene.agregarVideoACuenta(pipipi);
 		
-		Pipipi.agregarAListaDeReproduccion(videosDeMar);
 		
-		Usuario Ramiro = new Usuario("RamiroSanguineti", "4321");
+		Usuario ana = new Usuario ("AnaKim", "9999");
 		
-		String comentario = JOptionPane.showInputDialog("Ingrese comentario");
+		ana.reproducirVideo(pipipi);		
 		
-		Ramiro.comentarVideo(comentario, Pipipi);
+		Usuario ramiro = new Usuario("RamiroSanguineti", "4321");
+		
+		ramiro.reproducirVideo(pipipi);
+		
+		// String comentario = JOptionPane.showInputDialog("Ingrese comentario");
+		
+		// ramiro.comentarVideo(comentario, pipipi);
+		
 	}
 
 	
