@@ -7,7 +7,7 @@ public class ListaDeReproduccion {
 	private String nombre;
 	private Usuario usuario;
 	private Date fecha;
-	private ArrayList<Video> videos = new ArrayList<Video>();
+	ArrayList<Video> videos = new ArrayList<Video>();
 	
 	ListaDeReproduccion(String nombre) {
 		this.nombre = nombre;

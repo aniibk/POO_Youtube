@@ -2,11 +2,13 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 public class Usuario {
 	
 	private String plan;
-	private String usuario;
-	private String contrasena;
+	private String usuario = "";
+	private String contrasena = "";
 	private String nombre;
 	private String apellido;
 	private Date fechaNacimiento;
@@ -28,6 +30,21 @@ public class Usuario {
 		return this.contrasena;
 	}
 	
+	
+	public void iniciarSesion() {
+		
+		String esteUsuario = JOptionPane.showInputDialog("Ingrese su usuario");
+		String estaContraseña = JOptionPane.showInputDialog("Ingrese su contraseña");
+		
+		if (this.usuario.equals(esteUsuario) && this.contrasena.equals(estaContraseña)) {
+			System.out.println("El usuario: " + this.getUsuario() + " ha ingresado correctamente a YouTube");
+		}
+		else {
+			System.out.println("Usuario y/o contraseña incorrecta");
+			System.exit(0);
+		}
+		
+	}
 	
 	public void agregarVideoACuenta(Video video) {
 		VideosDeUsuario.add(video);
@@ -62,14 +79,15 @@ public class Usuario {
 		System.out.println("El video esta compartido en red social") ;
 	}
 	
-	public void agregarAListaDeReproduccion(List<Video> listaDeReproduccion, Video video) {;
-		listaDeReproduccion.add(video);
-		System.out.println("Se ha agregado el video " + video.getTitulo() + " a la lista de reproduccion" + listaDeReproduccion);
+	public void agregarAListaDeReproduccion(ListaDeReproduccion listaDeReproduccion, Video video) {;
+		listaDeReproduccion.videos.add(video);
+		System.out.println("Se ha agregado el video " + video.getTitulo() + " a la lista de reproduccion " + listaDeReproduccion.getListaDeReproduccion());
 	}
 	
-	public void reproducirLista(List<Video> listaDeReproduccion) {
-		for (int i = 0 ; i < 2; i++) {
-			System.out.println(listaDeReproduccion.get(i));
+	public void reproducirLista(ListaDeReproduccion listaDeReproduccion) {
+			System.out.println("Se esta reproduciendo la lista de reproducción: " + listaDeReproduccion.getListaDeReproduccion());
+		for (int i = 0 ; i < listaDeReproduccion.videos.size(); i++) {
+			System.out.println("Se esta reproduciendo el video: " + listaDeReproduccion.videos.get(i).getTitulo());
 			}
 		}
 
